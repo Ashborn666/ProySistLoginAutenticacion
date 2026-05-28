@@ -17,7 +17,9 @@ export class ConfigMfa {
   id: number;
 
   /** Usuario al que pertenece esta configuración MFA */
-  @ManyToOne(() => Usuario, (usuario) => usuario.configuracionesMfa, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Usuario, (usuario) => usuario.configuracionesMfa, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'usuario_id' })
   usuario: Usuario;
 

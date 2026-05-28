@@ -18,7 +18,9 @@ export class LogAuditoria {
   id: number;
 
   /** Sesión en la que se generó el log */
-  @ManyToOne(() => Sesion, (sesion) => sesion.logsAuditoria, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Sesion, (sesion) => sesion.logs_auditoria, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'sesion_id' })
   sesion: Sesion;
 

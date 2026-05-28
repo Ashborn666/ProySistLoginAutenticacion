@@ -1,9 +1,4 @@
-import {
-  Entity,
-  ManyToOne,
-  JoinColumn,
-  PrimaryColumn,
-} from 'typeorm';
+import { Entity, ManyToOne, JoinColumn, PrimaryColumn } from 'typeorm';
 import { Usuario } from './usuario.entity';
 import { Rol } from './rol.entity';
 
@@ -23,7 +18,9 @@ export class UsuarioRol {
   rol_id: number;
 
   /** Relación con el usuario */
-  @ManyToOne(() => Usuario, (usuario) => usuario.usuarioRoles, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Usuario, (usuario) => usuario.usuarioRoles, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'usuario_id' })
   usuario: Usuario;
 

@@ -1,0 +1,7 @@
+export declare class RegisterDto {
+    nombre: string;
+    email: string;
+    password: string;
+    telefono?: string;
+    corregimiento_id?: number;
+}

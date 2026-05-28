@@ -6,7 +6,9 @@ import { ConfigService } from '@nestjs/config';
  * @param configService - Servicio de configuración de NestJS
  * @returns Opciones de configuración para TypeORM
  */
-export const getDatabaseConfig = (configService: ConfigService): TypeOrmModuleOptions => ({
+export const getDatabaseConfig = (
+  configService: ConfigService,
+): TypeOrmModuleOptions => ({
   type: 'postgres',
   host: configService.get<string>('DB_HOST', 'localhost'),
   port: configService.get<number>('DB_PORT', 5432),

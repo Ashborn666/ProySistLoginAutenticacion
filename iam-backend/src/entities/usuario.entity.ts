@@ -46,7 +46,7 @@ export class Usuario {
   bio: string | null;
 
   /** Corregimiento de residencia del usuario (opcional) */
-  @ManyToOne(() => Corregimiento, (corregimiento) => corregimiento.usuarios, {
+  @ManyToOne(() => Corregimiento, {
     nullable: true,
     onDelete: 'SET NULL',
   })

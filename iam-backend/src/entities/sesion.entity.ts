@@ -21,7 +21,9 @@ export class Sesion {
   id: string;
 
   /** Usuario al que pertenece la sesión */
-  @ManyToOne(() => Usuario, (usuario) => usuario.sesiones, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Usuario, (usuario) => usuario.sesiones, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'usuario_id' })
   usuario: Usuario;
 

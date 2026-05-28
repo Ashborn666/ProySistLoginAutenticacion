@@ -18,7 +18,9 @@ export class TokenOauth {
   id: number;
 
   /** Usuario al que pertenece el token */
-  @ManyToOne(() => Usuario, (usuario) => usuario.tokensOauth, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Usuario, (usuario) => usuario.tokensOauth, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'usuario_id' })
   usuario: Usuario;
 
@@ -26,7 +28,9 @@ export class TokenOauth {
   usuario_id: string;
 
   /** Cliente OAuth para el cual se emitió el token */
-  @ManyToOne(() => ClienteOauth, (cliente) => cliente.tokensOauth, { onDelete: 'CASCADE' })
+  @ManyToOne(() => ClienteOauth, (cliente) => cliente.tokensOauth, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'cliente_id' })
   cliente: ClienteOauth;
 

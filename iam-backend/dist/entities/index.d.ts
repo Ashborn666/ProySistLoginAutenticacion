@@ -1,0 +1,17 @@
+export { Pais } from './pais.entity';
+export { Provincia } from './provincia.entity';
+export { Distrito } from './distrito.entity';
+export { Corregimiento } from './corregimiento.entity';
+export { Usuario } from './usuario.entity';
+export { Rol } from './rol.entity';
+export { Permiso } from './permiso.entity';
+export { UsuarioRol } from './usuario-rol.entity';
+export { RolPermiso } from './rol-permiso.entity';
+export { ConfigMfa } from './config-mfa.entity';
+export { Dispositivo } from './dispositivo.entity';
+export { Sesion } from './sesion.entity';
+export { LogAuditoria } from './log-auditoria.entity';
+export { ClienteOauth } from './cliente-oauth.entity';
+export { UsuarioAutorizacion } from './usuario-autorizacion.entity';
+export { TokenOauth } from './token-oauth.entity';
+export { Notificacion } from './notificacion.entity';

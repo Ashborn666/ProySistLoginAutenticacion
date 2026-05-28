@@ -19,7 +19,9 @@ export class Distrito {
   id: number;
 
   /** Provincia a la que pertenece el distrito */
-  @ManyToOne(() => Provincia, (provincia) => provincia.distritos, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Provincia, (provincia) => provincia.distritos, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'provincia_id' })
   provincia: Provincia;
 

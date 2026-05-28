@@ -19,7 +19,9 @@ export class Dispositivo {
   id: number;
 
   /** Usuario propietario del dispositivo */
-  @ManyToOne(() => Usuario, (usuario) => usuario.dispositivos, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Usuario, (usuario) => usuario.dispositivos, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'usuario_id' })
   usuario: Usuario;
 

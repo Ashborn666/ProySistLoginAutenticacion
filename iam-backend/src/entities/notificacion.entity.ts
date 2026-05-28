@@ -18,7 +18,9 @@ export class Notificacion {
   id: number;
 
   /** Usuario destinatario de la notificación */
-  @ManyToOne(() => Usuario, (usuario) => usuario.notificaciones, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Usuario, (usuario) => usuario.notificaciones, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'usuario_id' })
   usuario: Usuario;
 

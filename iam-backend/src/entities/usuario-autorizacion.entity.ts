@@ -24,12 +24,16 @@ export class UsuarioAutorizacion {
   cliente_id: number;
 
   /** Relación con el usuario */
-  @ManyToOne(() => Usuario, (usuario) => usuario.autorizaciones, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Usuario, (usuario) => usuario.autorizaciones, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'usuario_id' })
   usuario: Usuario;
 
   /** Relación con el cliente OAuth */
-  @ManyToOne(() => ClienteOauth, (cliente) => cliente.autorizaciones, { onDelete: 'CASCADE' })
+  @ManyToOne(() => ClienteOauth, (cliente) => cliente.autorizaciones, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'cliente_id' })
   cliente: ClienteOauth;
 

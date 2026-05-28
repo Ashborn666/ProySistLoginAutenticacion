@@ -24,7 +24,9 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
-      secretOrKey: configService.get<string>('JWT_SECRET'),
+      secretOrKey:
+        configService.get<string>('JWT_SECRET') ||
+        'tu_clave_secreta_super_segura_cambiame_en_produccion',
     });
   }
 
@@ -34,7 +36,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
    * @param payload - Payload decodificado del token
    * @returns Objeto con userId y email del usuario autenticado
    */
-  async validate(payload: JwtPayload): Promise<{ userId: string; email: string }> {
+  validate(payload: JwtPayload): { userId: string; email: string } {
     return { userId: payload.sub, email: payload.email };
   }
 }
